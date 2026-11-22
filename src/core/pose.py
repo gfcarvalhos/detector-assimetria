@@ -4,7 +4,7 @@ import urllib.request
 from mediapipe.tasks import python as mp_python
 from mediapipe.tasks.python import vision
 
-from config.config import MODEL_URL, MODEL_PATH
+from src.config.config import MODEL_URL, MODEL_PATH
 
 
 def baixar_modelo():

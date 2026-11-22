@@ -1,7 +1,7 @@
 """Captura de vídeo com OpenCV (webcam ou arquivo)."""
 import cv2
 
-from . import CAM_W, CAM_H
+from .config import CAM_W, CAM_H
 
 
 def abrir_captura(camera=0, video=None):

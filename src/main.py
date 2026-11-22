@@ -1,0 +1,9 @@
+import argparse
+import time
+from collections import deque
+
+import cv2
+import pygame
+import mediapipe as mp
+
+from config.config import CAM_W, CAM_H, PAINEL_W, RODAPE_H, COR, CHAVES_MED, PASTA_PRINTS

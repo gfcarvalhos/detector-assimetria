@@ -14,13 +14,13 @@ def baixar_modelo():
         urllib.request.urlretrieve(MODEL_URL, MODEL_PATH)
 
 
-def criar_landmarker():
+def criar_landmarker(modo=vision.RunningMode.VIDEO):
     with open(MODEL_PATH, 'rb') as f:
         modelo = f.read()
 
     opts = vision.PoseLandmarkerOptions(
         base_options=mp_python.BaseOptions(model_asset_buffer=modelo),
-        running_mode=vision.RunningMode.VIDEO,
+        running_mode=modo,
         num_poses=1,
         min_pose_detection_confidence=0.5,
         min_pose_presence_confidence=0.5,

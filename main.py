@@ -1,4 +1,4 @@
-import time, cv2, pygame
+import time, cv2, pygame, sys
 import mediapipe as mp
 
 from src.config.config import CAM_W, CAM_H, PAINEL_W, RODAPE_H, COR, CHAVES_MED, PASTA_PRINTS
@@ -7,6 +7,7 @@ from src.config.capture import abrir_captura, ler_frame
 from src.geometry.metrics import medir, avaliar, nota_simetria
 from src.core.esqueleto import desenhar_esqueleto
 from src.core.interface import bgr_para_surface, desenhar_painel, desenhar_rodape
+from src.core.image import analisar_imagens
 
 
 def captura(recurso):
@@ -131,6 +132,9 @@ def interative_application(recurso, estado):
 
 
 def main():
+  if '--imagem' in sys.argv:
+    analisar_imagens(sys.argv[sys.argv.index('--imagem') + 1:])
+    return
   recurso = inicializar_recursos();
   estado = inicializar_estado(recurso);
   try:

@@ -1,7 +1,7 @@
 """Constantes do projeto: caminhos, limiares, landmarks, cores e layout."""
 from pathlib import Path
 
-RAIZ = Path(__file__).resolve().parent.parent
+RAIZ = Path(__file__).resolve().parents[2]
 PASTA_MODELOS = RAIZ / 'models'
 PASTA_LOGS = RAIZ / 'logs'
 PASTA_PRINTS = RAIZ / 'prints'

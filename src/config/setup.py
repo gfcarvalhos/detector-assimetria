@@ -20,7 +20,7 @@ def inicializar_recursos():
   pygame.init()
   tela = pygame.display.set_mode((CAM_W + PAINEL_W, CAM_H + RODAPE_H))
   pygame.display.set_caption('Detector de Movimentos Assimétricos')
-  F = {'p': pygame.font.SysFont('arial', 15), 'b': pygame.font.SysFont('arial', 16, bold=True),
+  fontes = {'p': pygame.font.SysFont('arial', 15), 'b': pygame.font.SysFont('arial', 16, bold=True),
   'h2': pygame.font.SysFont('arial', 22, bold=True), 'grande': pygame.font.SysFont('arial', 54, bold=True)}
      
   lm = criar_landmarker()
@@ -28,7 +28,7 @@ def inicializar_recursos():
   reg = Registro()
   PASTA_PRINTS.mkdir(exist_ok=True)
 
-  return Recursos(args, cap, lm, rt, tela, reg);
+  return Recursos(args, cap, lm, rt, tela, fontes, reg);
 
 
 def inicializar_estado(recursos):
